@@ -1,0 +1,23 @@
+{
+  "parser": "babel-eslint",
+  "extends": [
+    "standard",
+    "plugin:react/recommended"
+  ],
+  "settings": {
+    "react": {
+      "version": "16.2"
+    }
+  },
+  "rules": {
+    "brace-style": ["error", "stroustrup"],
+    "no-console": ["warn", { "allow": ["warn", "error"] }],
+    "object-curly-spacing": ["error", "always"],
+    "arrow-parens": ["error", "always"],
+    "object-shorthand": ["error", "always"]
+  },
+  "plugins": ["jest"],
+  "env": {
+    "jest/globals": true
+  }
+}

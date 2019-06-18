@@ -1,0 +1,24 @@
+// TODO ARH: Make sure this doesn't break anything JCB is doing.
+.ui-input {
+  display: block;
+  border-radius: 2px;
+  padding: 4px; // TODO ARH move this out of here, perhaps.
+  border: solid 1px $PRIMARY_CONTENT_BORDER_COLOR;
+}
+
+// TODO ARH: Make sure this doesn't break anything JCB is doing.
+.ui-submit {
+  color: white;
+  background-color: $PRIMARY_BUTTON_BACKGROUND_COLOR;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 4px;
+}
+
+input {
+  @extend .ui-input
+}
+
+// input[type="submit"] {
+//   @extend .ui-submit
+// }

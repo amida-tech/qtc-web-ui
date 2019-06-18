@@ -1,0 +1,9 @@
+# Sometimes it's useful to mv/rename node_modules to node_modules_blah_blah_blah while developing,
+# which is why there is a a * at the end of node_modules here:
+node_modules*
+dist
+junk
+.env
+.vscode
+.DS_Store
+npm-debug.log

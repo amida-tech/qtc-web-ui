@@ -1,0 +1,212 @@
+// 
+// # APPLICATION DEFAULT COLORS
+// 
+//   * Reference these in your block stylesheets.
+//   * Each item in here should be a varaible declaration with `!default` appended
+//     * When we render the themed stylesheets, we provide them with the ability to override vars.
+//     * Using the SASS default flag, we can define this as the fallback for any variable they choose not to define.
+//     * This allows us to build a theme knowing all elements will have a default fallback.
+//     * You can read more about !default here: https://thoughtbot.com/blog/sass-default
+// 
+// # Construction
+//   1. Active Colors
+//   2. Deprecated Colors
+//   3. Override Colors
+//   4. Provisional Colors
+// 
+// # Good Naming Practices
+//   * Names formatted in SPINAL_CASE.
+//   * Names should describe context for use. Prefer defaulting to HTML tags here.
+//     * `$LIST-ITEM`
+//     * `$HEADER`
+//     * `$BUTTON-TEXT`
+//   * Names should describe attribute involved, eg:
+//     * `$LIST-ITEM-BORDER-COLOR`
+//     * `$HEADER-BACKGROUND-COLOR`
+//     * `$BUTTON-TEXT-COLOR`
+//   * Names can include bem-style modifiers, eg:
+//     * `$LIST-ITEM-BORDER-COLOR--FOCUSED`
+//     * `$HEADER-BACKGROUND-COLOR--ADMIN-MODE`
+//     * `$BUTTON-TEXT-COLOR--DISABLED`
+//   * Use `PRIMARY`, `SECONDARY`, `TERTIARY`, `QUARTERNATY`, eg:
+//     * `$PRIMARY-LIST-ITEM-BORDER-COLOR--FOCUSED`
+//     * `$SECONDARY-HEADER-BACKGROUND-COLOR`
+//     * `$SECONDARY-BUTTON-TEXT-COLOR`
+// 
+// # Tasks
+//   [ ] Remove all deprecated colors
+//   [ ] Render function to supply all themes
+//   [ ] Render function to only produce defitions for elements that have changed (webpack may handle?)
+
+
+///////////////////////
+//  # ACTIVE COLORS  //
+///////////////////////
+//    * This is where you declare every color variable.
+//    * Colors declared in this location should be overrideen by the theme definitions
+//      * They all need `!default`
+// 
+// ## TEXT COLORS
+// 
+// ### DISPLAY TEXT COLORS
+// * Use for headers
+$PRIMARY_DISPLAY_TEXT_COLOR: #001A33 !default;
+$SECONDARY_DISPLAY_TEXT_COLOR: #495560 !default;
+$TERTIARY_DISPLAY_TEXT_COLOR: #8F8E94 !default;
+$QUATERNARY_DISPLAY_TEXT_COLOR: #BABBBF !default;
+$ALTERNATE_DISPLAY_TEXT_COLOR: #FFFFFF !default;
+// used for things where an inverse text color is needed
+// THIS NEEDS A BETTER NAME
+
+// ### BODY TEXT COLORS
+// * Use for main page content
+$PRIMARY_BODY_TEXT_COLOR: #001A33 !default;
+$SECONDARY_BODY_TEXT_COLOR: #495560 !default;
+$TERTIARY_BODY_TEXT_COLOR: #8F8E94 !default;
+$QUATERNARY_BODY_TEXT_COLOR: #BABBBF !default;
+// ### LABEL TEXT COLORS
+// * Use for labels
+$PRIMARY_LABEL_TEXT_COLOR: #001A33 !default;
+$PRIMARY_LABEL_TEXT_COLOR--WARNING: #C71835 !default;
+$SECONDARY_LABEL_TEXT_COLOR: #495560 !default;
+$TERTIARY_LABEL_TEXT_COLOR: #8F8E94 !default;
+$QUATERNARY_LABEL_TEXT_COLOR: #BABBBF !default;
+
+// ### LINK TEXT COLORS
+// * Use for labels
+$PRIMARY_LINK_TEXT_COLOR: #0091EA !default;
+$PRIMARY_LINK_TEXT_COLOR--ACTIVE: #0091EA !default;
+$PRIMARY_LINK_TEXT_COLOR--FOCUS: #0091EA !default;
+$PRIMARY_LINK_TEXT_COLOR--HOVER: #00619E !default;
+$PRIMARY_DISABLED_LINK_TEXT_COLOR: #8F8E94 !default;
+$SECONDARY_LINK_TEXT_COLOR: #0091EA !default;
+$TERTIARY_LINK_TEXT_COLOR: #0091EA !default;
+$QUATERNARY_LINK_TEXT_COLOR: #0091EA !default;
+// ### LINK TEXT COLORS
+// * Use for labels
+$PRIMARY_TOAST_TEXT_COLOR: #FFFFFF;
+$PRIMARY_TOAST_BACKGROUND_COLOR: #0091EA;
+$PRIMARY_TOAST_TEXT_COLOR--WARNING: #FFFFFF;
+$PRIMARY_TOAST_BACKGROUND_COLOR--WARNING: #E11C3C;
+$PRIMARY_TOAST_TEXT_COLOR--GENERIC: #495560;
+$PRIMARY_TOAST_BACKGROUND_COLOR--GENERIC: #FFFFFF;
+// 
+// CONTENT COLORS
+// 
+// CONTENT
+// * Use for main content states
+$PRIMARY_CONTENT_BACKGROUND_COLOR: #FFFFFF !default;
+$PRIMARY_CONTENT_BACKGROUND_COLOR--ACTIVE: #ECEFF1 !default;
+$PRIMARY_CONTENT_BACKGROUND_COLOR--FOCUS: #ECEFF1 !default;
+$PRIMARY_CONTENT_BACKGROUND_COLOR--HOVER: #ECEFF1 !default;
+$PRIMARY_CONTENT_BORDER_COLOR: #E3E4E9 !default;
+
+$SECONDARY_CONTENT_BACKGROUND_COLOR: #ECEFF1 !default;
+$TERTIARY_CONTENT_BACKGROUND_COLOR: #C8CACC !default;
+$QUARTENARY_CONTENT_BACKGROUND_COLOR: #BBBEBF !default;
+
+$PRIMARY_INPUT_BORDER_COLOR: #CCCCCC !default;
+$PRIMARY_INPUT_BORDER_COLOR--FOCUSED: #009DFF !default;
+$PRIMARY_INPUT_BACKGROUND_COLOR--DISABLED: #ECEFF1 !default;
+
+
+
+// 
+// HEADER CONTENT
+// * Use for content within the header
+$PRIMARY_HEADER_TEXT_COLOR: #FFFFFF !default;
+// TODO: make these not all the same
+$PRIMARY_HEADER_LINK_TEXT_COLOR: #FFFFFF !default;
+$PRIMARY_HEADER_LINK_TEXT_COLOR--ACTIVE: #FFFFFF !default;
+$PRIMARY_HEADER_LINK_TEXT_COLOR--FOCUS: #FFFFFF !default;
+$PRIMARY_HEADER_LINK_TEXT_COLOR--HOVER: #FFFFFF !default;
+
+$SECONDARY_HEADER_TEXT_COLOR: #495560 !default;
+$TERTIARY_HEADER_TEXT_COLOR: #8F8E94 !default;
+$QUATERNARY_HEADER_TEXT_COLOR: #BABBBF !default;
+$PRIMARY_HEADER_CONTENT_BACKGROUND_COLOR: #0091EA !default;
+$PRIMARY_HEADER_CONTENT_BORDER_COLOR: darken($PRIMARY_HEADER_CONTENT_BACKGROUND_COLOR, 15) !default;
+
+$PRIMARY_MODAL_HEADER_DECORATIVE_BACKGROUND_GRADIENT_WITH_OPACITY: linear-gradient(275deg, rgba(darken($PRIMARY_HEADER_CONTENT_BACKGROUND_COLOR, 6), 0.92) 0%, rgba($PRIMARY_HEADER_CONTENT_BACKGROUND_COLOR, 0.92) 84%, rgba(darken($PRIMARY_HEADER_CONTENT_BACKGROUND_COLOR, 5), 0.92) 100%);
+$PRIMARY_MODAL_HEADER_DECORATIVE_BACKGROUND_GRADIENT: linear-gradient(275deg, darken($PRIMARY_HEADER_CONTENT_BACKGROUND_COLOR, 6) 0%, $PRIMARY_HEADER_CONTENT_BACKGROUND_COLOR 84%, darken($PRIMARY_HEADER_CONTENT_BACKGROUND_COLOR, 5) 100%);
+$PRIMARY_MODAL_HEADER_TEXT_COLOR: #FFFFFF !default;
+$SECONDARY_MODAL_HEADER_DECORATIVE_BACKGROUND_GRADIENT: linear-gradient(275deg, darken(#495560, 3) 0%, #495560 84%, darken(#495560, 2) 100%);
+$SECONDARY_MODAL_HEADER_TEXT_COLOR: #FFFFFF !default;
+$SECONDARY_MODAL_HEADER_LINK_COLOR: lighten($PRIMARY_LINK_TEXT_COLOR, 20);
+$SECONDARY_MODAL_HEADER_LINK_COLOR--ACTIVE: lighten($PRIMARY_LINK_TEXT_COLOR--ACTIVE, 20);
+$SECONDARY_MODAL_HEADER_LINK_COLOR--HOVER: lighten($PRIMARY_LINK_TEXT_COLOR--HOVER, 20);
+
+
+
+// 
+// BUTTON CONTENT
+// * This may get replaced down the line with a more dynamic button themeing proccess.
+$PRIMARY_BUTTON_BACKGROUND_COLOR: #0091EA !default;
+$PRIMARY_BUTTON_BACKGROUND_COLOR--ACTIVE: #009DFF  !default;
+$PRIMARY_BUTTON_BACKGROUND_COLOR--FOCUS: #0091EA !default;
+$PRIMARY_BUTTON_BACKGROUND_COLOR--HOVER: #00619E !default;
+$PRIMARY_BUTTON_BORDER_COLOR: #0091EA !default;
+$PRIMARY_BUTTON_TEXT_COLOR: #FFFFFF !default;
+$PRIMARY_BUTTON_TEXT_SHADOW_COLOR: darken($PRIMARY_BUTTON_BACKGROUND_COLOR, 15) !default;
+
+$PRIMARY_OK_BUTTON_BACKGROUND_COLOR: #00AB3E !default;
+$PRIMARY_OK_BUTTON_BACKGROUND_COLOR--ACTIVE: #FA1E43  !default;
+$PRIMARY_OK_BUTTON_BACKGROUND_COLOR--FOCUS: #FA1E43 !default;
+$PRIMARY_OK_BUTTON_BACKGROUND_COLOR--HOVER: #C71835 !default;
+$PRIMARY_OK_BUTTON_TEXT_COLOR: #FFFFFF !default;
+$PRIMARY_OK_BUTTON_TEXT_SHADOW_COLOR: darken($PRIMARY_OK_BUTTON_BACKGROUND_COLOR, 15) !default;
+
+$PRIMARY_WARNING_BUTTON_BACKGROUND_COLOR: #E11C3C !default;
+$PRIMARY_WARNING_BUTTON_BACKGROUND_COLOR--ACTIVE: #FA1E43  !default;
+$PRIMARY_WARNING_BUTTON_BACKGROUND_COLOR--FOCUS: #FA1E43 !default;
+$PRIMARY_WARNING_BUTTON_BACKGROUND_COLOR--HOVER: #C71835 !default;
+$PRIMARY_WARNING_BUTTON_TEXT_COLOR: #FFFFFF !default;
+$PRIMARY_WARNING_BUTTON_TEXT_SHADOW_COLOR: darken($PRIMARY_WARNING_BUTTON_BACKGROUND_COLOR, 15) !default;
+
+$SECONDARY_BUTTON_BACKGROUND_COLOR: #FFFFFF !default;
+$SECONDARY_BUTTON_BACKGROUND_COLOR--ACTIVE: #C3D0D9 !default;
+$SECONDARY_BUTTON_BACKGROUND_COLOR--FOCUS: #DAE9F2 !default;
+$SECONDARY_BUTTON_BACKGROUND_COLOR--HOVER: #DAE9F2 !default;
+$SECONDARY_BUTTON_BACKGROUND_COLOR--DISABLED: transparent !default;
+$SECONDARY_BUTTON_BORDER_COLOR: #BBBFC3 !default;
+$SECONDARY_BUTTON_TEXT_COLOR: #0091EA !default;
+$SECONDARY_BUTTON_TEXT_COLOR--HOVER: #00619E !default;
+$SECONDARY_BUTTON_TEXT_COLOR--DISABLED: rgb(2, 2, 3) !default;
+
+$TERTIARY_BUTTON_BACKGROUND_COLOR: #FFFFFF !default;
+$TERTIARY_BUTTON_BACKGROUND_COLOR--ACTIVE: #D0D4D9 !default;
+$TERTIARY_BUTTON_BACKGROUND_COLOR--FOCUS: #ECEFF1 !default;
+$TERTIARY_BUTTON_BACKGROUND_COLOR--HOVER: #ECEFF1 !default;
+$TERTIARY_BUTTON_BACKGROUND_COLOR--DISABLED: transparent !default;
+$TERTIARY_BUTTON_BORDER_COLOR: #BBBFC3 !default;
+$TERTIARY_BUTTON_TEXT_COLOR: #495560 !default;
+$TERTIARY_BUTTON_TEXT_COLOR--DISABLED: #BBBFC3 !default;
+
+
+// 
+// MISC FIXTURES
+// 
+$PRIMARY_CELL_UNREAD_INDICATOR_COLOR: #0091EA !default;
+
+///////////////////////////
+//  # DEPRECATED COLORS  //
+///////////////////////////
+//    * Phase out old colors from previous implementations here
+//    * This should only be destructive, marked for deletion items
+//    * This can be a rolling list, but once an item is on this list it cannot be editied, only removed.
+//    * No new references should be made to an item on this list.
+//    * If anything, remove instances of these colors when you find them 
+
+
+/////////////////////////
+//  # OVERRIDE COLORS  //
+/////////////////////////
+//    * Use this sparingly, as a place to patch colors.
+//    * You're committing to properly integrating these as soon as you can.
+//    * Media queries may be involved here, but you can break stuff fast that way too.
+
+
+////////////////////////////
+//  # Provisional Colors  //
+////////////////////////////
+//    * Use this as a place to propose new colors in your current work.

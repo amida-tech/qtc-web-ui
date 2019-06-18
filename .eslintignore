@@ -1,0 +1,18 @@
+# Directories
+src/assets
+dist
+docs-private
+junk
+
+# Individual Files
+Dockerfile
+CHANGELOG.md
+index.template.ejs
+LICENSE
+package.json
+package-lock.json
+README.md
+
+# Globs and/or Wildcards
+*.scss
+*.yaml

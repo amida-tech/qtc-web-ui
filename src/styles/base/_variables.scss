@@ -1,0 +1,24 @@
+$font-primary: Libre Franklin;
+$font-secondary: Arial, Helvetica, sans-serif;
+
+/* When iframing ghost and the original web portal, if you set the height of the
+iframe to 100%, the iframe is the height of the whole page. Therefore, the header,
+which is 46.5 pixels tall, pushes the iframe down, so it goes below the bottom of
+the page, what looks to be that many pixels. Therefore, the iframes height is set to
+calc(100% - someNumPixels). You'd think someNumPixels would need to be 46.5 to make
+everything line up. However, with calc(100% - 46.5px), the iframe still
+unexpectedly overflows the bottom of the page a bit. From experimentation, setting
+it to calc(100% - 71px) makes everything line up with the bottom of the page, with
+no verticle scroll bar. Tested in Chrome, Firefox, and Safari. */
+$measure__iframe--header-height-compensation: 71px;
+
+
+$measure__golden-ratio: 1.61803398875;
+$metric__nav-height: 6rem;
+$metric__max-width: 120rem;
+$metric__break-xs: 32rem;
+$metric__break-ss: 40rem;
+$metric__break-sm: 48rem;
+$metric__break-md: 64rem;
+$metric__break-lg: 75rem;
+$pct__golden-ratio-inverse: 61.803398875%;

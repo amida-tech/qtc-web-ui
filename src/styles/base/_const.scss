@@ -1,0 +1,25 @@
+$breakpoint__ss: 18;
+$breakpoint__xs: 30;
+$breakpoint__sm: 48;
+$breakpoint__md: 64;
+$breakpoint__lg: 75;
+$breakpoint__xl: 90;
+$breakpoint--unit: 'em';
+$query__ss-above: 'only screen and (min-width : #{$breakpoint__ss}#{$breakpoint--unit})';
+$query__xs-above: 'only screen and (min-width : #{$breakpoint__xs}#{$breakpoint--unit})';
+$query__xs-below: 'only screen and (min-width : #{$breakpoint__xs}#{$breakpoint--unit - 0.000001})';
+$query__sm-above: 'only screen and (min-width : #{$breakpoint__sm}#{$breakpoint--unit})';
+$query__sm-below: 'only screen and (max-width : #{$breakpoint__sm}#{$breakpoint--unit - 0.000001})';
+$query__md-above: 'only screen and (min-width : #{$breakpoint__md}#{$breakpoint--unit})';
+$query__lg-above: 'only screen and (min-width : #{$breakpoint__lg}#{$breakpoint--unit})';
+$query__xl-above: 'only screen and (min-width : #{$breakpoint__xl}#{$breakpoint--unit})';
+
+
+.--disable-select {
+    -webkit-touch-callout: none;
+      -webkit-user-select: none;
+       -khtml-user-select: none;
+         -moz-user-select: none;
+          -ms-user-select: none;
+              user-select: none;
+  }

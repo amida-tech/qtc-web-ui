@@ -1,0 +1,17 @@
+{
+  "plugins": [
+    // IE hasn't implemented Object Rest and Spread yet (as of July 2018).
+    "transform-object-rest-spread",
+    "react-hot-loader/babel",
+    // See note in docs-private/design-notes.md about class properties.
+    ["transform-class-properties", { "spec": true }]
+  ],
+  "presets": ["react"],
+  "env": {
+    "test": {
+      // Webpack has import/export transformation built in; however, Jest does not.
+      // Therefore, to use import/export with Jest only, when env=test we need to use plugin transform-es2015-modules-commonjs.
+      "plugins": ["transform-es2015-modules-commonjs"]
+    }
+  }
+}

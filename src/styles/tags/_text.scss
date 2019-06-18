@@ -1,0 +1,224 @@
+@include import__font--google-fonts($font-primary);
+html {
+  font-size: 16px;
+  line-height: 21px;
+  font-weight: 300;
+  color: $PRIMARY_BODY_TEXT_COLOR;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  font-family: $font-primary;
+  font-size: 1em;
+  line-height: 1.4375em;
+  margin: auto;
+}
+
+.text__h1 {
+  font-size: 3.1875em;
+  line-height: 1.35294118em;
+  margin-top: 0.45098039em;
+  margin-bottom: 0.45098039em;
+}
+
+.text__h1--rem {
+  font-size: 3.1875rem;
+  line-height: 1.35294118em;
+  margin-top: 0.45098039em;
+  margin-bottom: 0.45098039em;
+}
+
+.text__h2 {
+  font-size: 2.375em;
+  line-height: 1.21052632em;
+  margin-top: 0.60526316em;
+  margin-bottom: 0.60526316em;
+}
+
+.text__h3 {
+  font-size: 1.75em;
+  line-height: 1.64285714em;
+  margin-top: 0.82142857em;
+  margin-bottom: 0.82142857em;
+}
+
+.text__h4 {
+  font-size: 1.4375em;
+  line-height: 1.82608696em;
+  margin-top: 0.91304348em;
+  margin-bottom: 0em;
+}
+
+.text__h5 {
+  font-size: 1em;
+  line-height: 1.4375em;
+  margin-top: 1.4375em;
+  margin-bottom: 0em;
+}
+
+.text__h6 {
+  font-size: 1em;
+  line-height: 1.4375em;
+  margin-top: 1.4375em;
+  margin-bottom: 0em;
+}
+
+.text__h7 {
+  font-size: 0.93em;
+  line-height: 1em;
+  margin-top: 0.3em;
+  margin-bottom: 0em;
+}
+
+.text__h8 {
+  font-size: 0.75em;
+  line-height: 0.761em;
+  margin-top: 1.4375em;
+  margin-bottom: 0em;
+  &--no-margin {
+    margin-top: 0em
+  }
+}
+
+p,
+ul,
+ol,
+pre,
+table,
+blockquote {
+  margin-top: 0em;
+  // margin-bottom: 1.4375em;
+}
+
+ul ul,
+ol ol,
+ul ol,
+ol ul {
+  margin-top: 0em;
+  margin-bottom: 0em;
+}
+
+
+/* Let's make sure all's aligned */
+
+hr {
+  border: 1px solid;
+  margin: -1px 0;
+}
+
+b,
+i,
+strong,
+em,
+small,
+code {
+  line-height: 0;
+}
+
+sub,
+sup {
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+@media #{$query__md-above} {
+  body {
+    font-family: sans-serif;
+    font-size: 1em;
+    line-height: 1.3125em;
+    margin: auto;
+  }
+  .text__h1 {
+    font-size: 4em;
+    line-height: 1.3125em;
+    margin-top: 0.328125em;
+    margin-bottom: 0.328125em;
+  }
+  .text__h1--rem {
+    font-size: 4rem;
+    line-height: 1.3125em;
+    margin-top: 0.328125em;
+    margin-bottom: 0.328125em;
+  }
+  .text__h2 {
+    font-size: 2.8125em;
+    line-height: 1.4em;
+    margin-top: 0.46666667em;
+    margin-bottom: 0.93333334em;
+  }
+  .text__h3 {
+    font-size: 2em;
+    line-height: 1.3125em;
+    margin-top: 0.65625em;
+    margin-bottom: 0.65625em;
+  }
+  .text__h4 {
+    font-size: 1.4375em;
+    line-height: 1.82608696em;
+    margin-top: 0.91304348em;
+    margin-bottom: 0em;
+  }
+  .text__h5 {
+    font-size: 1em;
+    line-height: 1.3125em;
+    margin-top: 1.3125em;
+    margin-bottom: 0em;
+  }
+  .text__h6 {
+    font-size: 1em;
+    line-height: 1.3125em;
+    margin-top: 1.3125em;
+    margin-bottom: 0em;
+  }
+  p,
+  ul,
+  ol,
+  pre,
+  table,
+  blockquote {
+    margin-top: 0em;
+    // margin-bottom: 1.3125em;
+  }
+  ul ul,
+  ol ol,
+  ul ol,
+  ol ul {
+    margin-top: 0em;
+    margin-bottom: 0em;
+  }
+  /* Let's make sure all's aligned */
+  hr {
+    border: 1px solid;
+    margin: -1px 0;
+  }
+  a,
+  b,
+  i,
+  strong,
+  em,
+  small,
+  code {
+    // line-height: 0;
+  }
+  sub,
+  sup {
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+  }
+  sup {
+    top: -0.5em;
+  }
+  sub {
+    bottom: -0.25em;
+  }
+}
