@@ -25,7 +25,7 @@ You never need to manually set this. The various `package.json` scripts set this
 
 The port the express server that serves this app.
 
-##### `APPLICATION_PRESENTATION_NAME` (Required) [`Orange`]
+##### `APPLICATION_PRESENTATION_NAME` (Required) [`QTC Web UI`]
 
 The name of the application, as it will be displayed in the web application.
 
