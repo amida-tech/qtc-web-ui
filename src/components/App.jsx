@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 import { hot } from 'react-hot-loader'
 
 import config from 'config/configFromCookie'
@@ -9,13 +10,17 @@ const { applicationPresentationName } = config
 const LOCAL_API_URL = 'http://127.0.0.1:5000/mapping_data_frames/'
 const CLOUD_API_URL = 'http://ec2-54-144-23-157.compute-1.amazonaws.com/mapping_data_frames/';
 
+function IndexPage() {
+    return <h2>Index</h2>
+}
+
 /*
- * CreateMappingPage: React frontend for --create functionality.
+ * CreatePage: React frontend for --create functionality.
  *
  * Prompts the user for a DBQ number, calls the corresponding mapping_data_frames 
  * API endpoint, and downloads the resulting file.
 */
-class CreateMappingPage extends Component {
+class CreatePage extends Component {
     constructor(props) {
         /* Initializes app's dbqnum property and binds form event functions. */
         super(props);
@@ -76,5 +81,46 @@ class CreateMappingPage extends Component {
     }
 }
 
+function DevelopPage() {
+    return <h2>Develop</h2>;
+}
+  
+function TestPage() {
+    return <h2>Test</h2>;
+}
+
+function NotFound() {
+    return <h2>Not Found</h2>
+}
+
+/*
+ * AppNavigator: Navigation menu that provides links to show the HTML 
+ * corresponding with each endpoint (create, develop, and test).
+*/
+function AppNavigator() {
+    // return navigation menu
+    return (
+        <Router>
+        <div>
+            <nav>
+                <ul>
+                    <li><Link to="/">Home</Link></li>
+                    <li><Link to="/create">Create</Link></li>
+                    <li><Link to="/develop/">Develop</Link></li>
+                    <li><Link to="/test/">Test</Link></li>
+                </ul>
+            </nav>
+            <Switch>
+                <Route path="/" exact component={IndexPage} />
+                <Route path="/create/" component={CreatePage} />
+                <Route path="/develop/" component={DevelopPage} />
+                <Route path="/test/" component={TestPage} />
+                <Route component={NotFound} />
+            </Switch>
+        </div>
+        </Router>
+    );
+}
+
 // hot-reload page
-export default hot(module)(CreateMappingPage)
+export default hot(module)(AppNavigator)

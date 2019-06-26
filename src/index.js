@@ -2,6 +2,6 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 
 // import config, { getConfigSuccessful } from 'config/configFromCookie'
-import CreateMappingPage from 'components/App'
+import AppNavigator from 'components/App'
 
-ReactDOM.render(<CreateMappingPage />, document.getElementById('react_root'))
+ReactDOM.render(<AppNavigator />, document.getElementById('react_root'))
