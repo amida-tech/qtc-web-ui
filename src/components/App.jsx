@@ -10,8 +10,19 @@ const { applicationPresentationName } = config
 const LOCAL_API_URL = 'http://127.0.0.1:5000/mapping_data_frames/'
 const CLOUD_API_URL = 'http://ec2-54-144-23-157.compute-1.amazonaws.com/mapping_data_frames/';
 
+/*
+ * IndexPage: Welcome/home page.
+*/
 function IndexPage() {
-    return <h2>Index</h2>
+    return (
+        <div class='app-page' id='create-page-div'>
+            <h2>Welcome!</h2>
+            You've reached the QTC Mapping-DBQs API.
+            Please select a page from the navigation menu above in order to create a mapping, 
+            generate a mapping in dev mode, or run tests on a pre-mapped DBQ.<br></br>
+            Please reach out with any questions or concerns.
+        </div>
+    )
 }
 
 /*
@@ -63,7 +74,9 @@ class CreatePage extends Component {
     render() {
         /* Renders HTML form for user to enter a DBQ# and its mapping file. */
         return (
-            <div className="App">
+            <div class='app-page' id='create-page-div'>
+                <h2>Create a Mapping</h2>
+                Please enter a valid DBQ number below to generate its mapping file.
                 <form onSubmit={this.handleSubmit}>
                     <br></br>
                     <div className="field">
@@ -81,16 +94,49 @@ class CreatePage extends Component {
     }
 }
 
+/*
+ * DevelopPage: React frontend for --dev functionality.
+ *
+ * 
+ * 
+*/
 function DevelopPage() {
-    return <h2>Develop</h2>;
-}
-  
-function TestPage() {
-    return <h2>Test</h2>;
+    return (
+        <div class='app-page' id='develop-page-div'>
+            <h2>Development Mode</h2>
+            Please fill out the fields below to generate a mapping file.
+        </div>
+    )
 }
 
+/*
+ * TestPage: React frontend for --test functionality.
+ *
+ * 
+ * 
+*/
+function TestPage() {
+    return (
+        <div class='app-page' id='test-page-div'>
+            <h2>Test a Mapping</h2>
+            Please enter a valid DBQ number below, then choose the mapping file you want to test.
+        </div>
+    )
+}
+
+/*
+ * NotFound: Error page for when a user tries to go to any unrecognized URL on the domain.
+*/
 function NotFound() {
-    return <h2>Not Found</h2>
+    return (
+        <div class='app-page' id='not-found-div'>
+            <h2>Not Found</h2>
+            Sorry, that page doesn't exist. Try selecting a page from the navigation menu 
+            above in order to create a mapping, generate a mapping in dev mode, 
+            or run tests on a pre-mapped DBQ.<br></br>
+            Please reach out with any questions or concerns.
+        </div>
+    )
 }
 
 /*
@@ -101,7 +147,7 @@ function AppNavigator() {
     // return navigation menu
     return (
         <Router>
-        <div>
+        <div class='app-page' id='navigator-div'>
             <nav>
                 <ul>
                     <li><Link to="/">Home</Link></li>
