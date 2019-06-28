@@ -3,7 +3,9 @@ import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 import { hot } from 'react-hot-loader'
 
 import config from 'config/configFromCookie'
-import styles from 'styles/styles.scss'
+import 'styles/qtcstyles.scss'
+//const amidaLogo = require('../assets/amida-logo.png');
+//import logo from '../assets/amida-logo.png';
 
 const { applicationPresentationName } = config
 
@@ -15,11 +17,11 @@ const CLOUD_API_URL = 'http://ec2-54-144-23-157.compute-1.amazonaws.com/mapping_
 */
 function IndexPage() {
     return (
-        <div class='app-page' id='create-page-div'>
+        <div className='app-page' id='index-page-div'>
             <h2>Welcome!</h2>
             You've reached the QTC Mapping-DBQs API.
             Please select a page from the navigation menu above in order to create a mapping, 
-            generate a mapping in dev mode, or run tests on a pre-mapped DBQ.<br></br>
+            generate a mapping in dev mode, or run tests on a pre-mapped DBQ.
             Please reach out with any questions or concerns.
         </div>
     )
@@ -49,6 +51,12 @@ class CreatePage extends Component {
     async handleSubmit(event) {
         /* When form is submitted, fetches mapping file from API and downloads it. */
         event.preventDefault();
+        // catches blank input error
+        if (this.state.dbqnum == '') {
+            alert('Error: Please enter a valid DBQ number.');
+            this.setState({ dbqnum: '' });
+            return;
+        }
         try {
             // call to API
             var requestURL = CLOUD_API_URL + this.state.dbqnum;
@@ -64,20 +72,20 @@ class CreatePage extends Component {
             document.body.appendChild(blobLink);
             blobLink.click();
             blobLink.parentNode.removeChild(blobLink);
-
-            this.setState({ dbqnum: '' });
         } catch (error) {
-            console.log('Error: ' + error);
+            alert('Error: Please enter a valid DBQ number.');
         }
+        // reset form
+        this.setState({ dbqnum: '' });
     }
 
     render() {
         /* Renders HTML form for user to enter a DBQ# and its mapping file. */
         return (
-            <div class='app-page' id='create-page-div'>
+            <div className='app-page' id='create-page-div'>
                 <h2>Create a Mapping</h2>
                 Please enter a valid DBQ number below to generate its mapping file.
-                <form onSubmit={this.handleSubmit}>
+                <form onSubmit={this.handleSubmit} autocomplete="off">
                     <br></br>
                     <div className="field">
                         <label className="label">DBQ Number:</label>
@@ -86,7 +94,7 @@ class CreatePage extends Component {
                         </div>
                     </div>
                     <br></br>
-                    <input type="submit" value="Download Mapping"/>
+                    <input type="submit" value="Download"/>
                 </form>
                 <br></br>
             </div>
@@ -102,7 +110,7 @@ class CreatePage extends Component {
 */
 function DevelopPage() {
     return (
-        <div class='app-page' id='develop-page-div'>
+        <div className='app-page' id='develop-page-div'>
             <h2>Development Mode</h2>
             Please fill out the fields below to generate a mapping file.
         </div>
@@ -117,7 +125,7 @@ function DevelopPage() {
 */
 function TestPage() {
     return (
-        <div class='app-page' id='test-page-div'>
+        <div className='app-page' id='test-page-div'>
             <h2>Test a Mapping</h2>
             Please enter a valid DBQ number below, then choose the mapping file you want to test.
         </div>
@@ -129,7 +137,7 @@ function TestPage() {
 */
 function NotFound() {
     return (
-        <div class='app-page' id='not-found-div'>
+        <div className='app-page' id='not-found-div'>
             <h2>Not Found</h2>
             Sorry, that page doesn't exist. Try selecting a page from the navigation menu 
             above in order to create a mapping, generate a mapping in dev mode, 
@@ -147,15 +155,18 @@ function AppNavigator() {
     // return navigation menu
     return (
         <Router>
-        <div class='app-page' id='navigator-div'>
-            <nav>
-                <ul>
-                    <li><Link to="/">Home</Link></li>
-                    <li><Link to="/create">Create</Link></li>
-                    <li><Link to="/develop/">Develop</Link></li>
-                    <li><Link to="/test/">Test</Link></li>
-                </ul>
-            </nav>
+        <div id='app-div'>
+            <div className='header'>
+                <img id='logo' src='/public/assets/amida-logo.png' alt="Amida logo"></img>
+                <div id='nav-bar-div'>
+                    <ul>
+                        <li><Link to="/" className='react-link'>HOME</Link></li>
+                        <li><Link to="/create" className='react-link'>CREATE</Link></li>
+                        <li><Link to="/develop/" className='react-link'>DEVELOP</Link></li>
+                        <li><Link to="/test/" className='react-link'>TEST</Link></li>
+                    </ul>
+                </div>
+            </div>
             <Switch>
                 <Route path="/" exact component={IndexPage} />
                 <Route path="/create/" component={CreatePage} />
@@ -163,6 +174,7 @@ function AppNavigator() {
                 <Route path="/test/" component={TestPage} />
                 <Route component={NotFound} />
             </Switch>
+            <div id='footer'></div>
         </div>
         </Router>
     );
