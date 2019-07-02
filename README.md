@@ -29,7 +29,7 @@ The port the express server that serves this app.
 
 The name of the application, as it will be displayed in the web application.
 
-##### `CLOUD_API_URL` (Required) [`http://ec2-54-144-23-157.compute-1.amazonaws.com/`]
+##### `REACT_APP_API_URL` (Required) [`http://ec2-54-144-23-157.compute-1.amazonaws.com/`]
 
 The URL to the Amida QTC Mapping API.
 
