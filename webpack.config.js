@@ -118,7 +118,8 @@ module.exports = removeEmpty({
     new HtmlWebpackPlugin({
       template: 'src/index.template.ejs',
       chunks: ['public/index'],
-      filename: 'public/index.html'
+      filename: 'public/index.html',
+      favicon: "src/assets/amidafav.png"
     }),
   ].concat(deploymentLevelSpecificConfig.plugins[NODE_ENV]))
 })
