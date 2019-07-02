@@ -8,9 +8,8 @@ import 'styles/qtcstyles.scss'
 //import logo from '../assets/amida-logo.png';
 
 const { applicationPresentationName } = config
-
-const LOCAL_API_URL = 'http://127.0.0.1:5000/mapping_data_frames/'
-const CLOUD_API_URL = 'http://ec2-54-144-23-157.compute-1.amazonaws.com/mapping_data_frames/';
+//const API_URL = process.env.REACT_APP_API_URL;
+const API_URL = 'http://ec2-54-144-23-157.compute-1.amazonaws.com/'
 
 /*
  * IndexPage: Welcome/home page.
@@ -59,7 +58,7 @@ class CreatePage extends Component {
         }
         try {
             // call to API
-            var requestURL = CLOUD_API_URL + this.state.dbqnum;
+            var requestURL = API_URL + 'mapping_data_frames/' + this.state.dbqnum;
             const response = await fetch(requestURL);
 
             // turn file into blob and create url pointing to it
