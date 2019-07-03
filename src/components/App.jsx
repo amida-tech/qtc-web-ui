@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 import { hot } from 'react-hot-loader'
-
+import FileUpload from './FileUpload';
 import config from 'config/configFromCookie'
 import 'styles/qtcstyles.scss'
 //const amidaLogo = require('../assets/amida-logo.png');
@@ -20,7 +20,7 @@ function IndexPage() {
         <div className='app-page' id='index-page-div'>
             <h2>Welcome!</h2>
             You've reached the QTC Mapping-DBQs API.
-            Please select a page from the navigation menu above in order to create a mapping, 
+            Please select a page from the navigation menu above in order to create a mapping,
             generate a mapping in dev mode, or run tests on a pre-mapped DBQ.
             Please reach out with any questions or concerns.
         </div>
@@ -85,16 +85,16 @@ class CreatePage extends Component {
             <div className='app-page' id='create-page-div'>
                 <h2>Create a Mapping</h2>
                 Please enter a valid DBQ number below to generate its mapping file.
-                <form onSubmit={this.handleSubmit} autocomplete="off">
+                <form onSubmit={this.handleSubmit} autoComplete="off">
                     <br></br>
                     <div className="field">
                         <label className="label">DBQ Number:</label>
                         <div className="control">
-                            <input className="input" type="text" name="dbqnum" value={this.state.dbqnum} onChange={this.handleChange}/>
+                            <input className="input" type="text" name="dbqnum" value={this.state.dbqnum} onChange={this.handleChange} />
                         </div>
                     </div>
                     <br></br>
-                    <input type="submit" value="Download"/>
+                    <input type="submit" value="Download" />
                 </form>
                 <br></br>
             </div>
@@ -139,8 +139,8 @@ function NotFound() {
     return (
         <div className='app-page' id='not-found-div'>
             <h2>Not Found</h2>
-            Sorry, that page doesn't exist. Try selecting a page from the navigation menu 
-            above in order to create a mapping, generate a mapping in dev mode, 
+            Sorry, that page doesn't exist. Try selecting a page from the navigation menu
+            above in order to create a mapping, generate a mapping in dev mode,
             or run tests on a pre-mapped DBQ.<br></br>
             Please reach out with any questions or concerns.
         </div>
@@ -155,27 +155,27 @@ function AppNavigator() {
     // return navigation menu
     return (
         <Router>
-        <div id='app-div'>
-            <div className='header'>
-                <img id='logo' src='/public/assets/amida-logo.png' alt="Amida logo"></img>
-                <div id='nav-bar-div'>
-                    <ul>
-                        <li><Link to="/" className='react-link'>HOME</Link></li>
-                        <li><Link to="/create" className='react-link'>CREATE</Link></li>
-                        <li><Link to="/develop/" className='react-link'>DEVELOP</Link></li>
-                        <li><Link to="/test/" className='react-link'>TEST</Link></li>
-                    </ul>
+            <div id='app-div'>
+                <div className='header'>
+                    <img id='logo' src='/public/assets/amida-logo.png' alt="Amida logo"></img>
+                    <div id='nav-bar-div'>
+                        <ul>
+                            <li><Link to="/" className='react-link'>HOME</Link></li>
+                            <li><Link to="/create" className='react-link'>CREATE</Link></li>
+                            <li><Link to="/develop/" className='react-link'>DEVELOP</Link></li>
+                            <li><Link to="/test/" className='react-link'>TEST</Link></li>
+                        </ul>
+                    </div>
                 </div>
+                <Switch>
+                    <Route path="/" exact component={IndexPage} />
+                    <Route path="/create/" component={CreatePage} />
+                    <Route path="/develop/" component={DevelopPage} />
+                    <Route path="/test/" component={FileUpload} />
+                    <Route component={NotFound} />
+                </Switch>
+                <div id='footer'></div>
             </div>
-            <Switch>
-                <Route path="/" exact component={IndexPage} />
-                <Route path="/create/" component={CreatePage} />
-                <Route path="/develop/" component={DevelopPage} />
-                <Route path="/test/" component={TestPage} />
-                <Route component={NotFound} />
-            </Switch>
-            <div id='footer'></div>
-        </div>
         </Router>
     );
 }
