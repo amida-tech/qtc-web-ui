@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 import { hot } from 'react-hot-loader'
-
+import FileUpload from './FileUpload';
 import config from 'config/configFromCookie'
 import 'styles/qtcstyles.scss'
 //const amidaLogo = require('../assets/amida-logo.png');
@@ -85,7 +85,7 @@ class CreatePage extends Component {
             <div className='app-page' id='create-page-div'>
                 <h2>Create a Mapping</h2>
                 Please enter a valid DBQ number below to generate its mapping file.
-                <form onSubmit={this.handleSubmit} autocomplete="off">
+                <form onSubmit={this.handleSubmit} autoComplete="off">
                     <br></br>
                     <div className="field">
                         <label className="label">DBQ Number:</label>
@@ -171,7 +171,7 @@ function AppNavigator() {
                 <Route path="/" exact component={IndexPage} />
                 <Route path="/create/" component={CreatePage} />
                 <Route path="/develop/" component={DevelopPage} />
-                <Route path="/test/" component={TestPage} />
+                <Route path="/test/" component={FileUpload} />
                 <Route component={NotFound} />
             </Switch>
             <div id='footer'></div>
