@@ -82,7 +82,7 @@ class CreatePage extends Component {
                     <br></br>
                     <div className="field">
                         <label className="label">DBQ Number:</label>
-                        <div className="control">
+                        <div>
                             <input className="input" type="text" name="dbqnum" value={this.state.dbqnum} onChange={this.handleChange}/>
                         </div>
                     </div>
