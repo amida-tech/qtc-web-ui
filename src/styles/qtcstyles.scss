@@ -2,25 +2,30 @@
  * QTCSTYLES.SCSS: stylesheet for QTC Mapping-DBQs API. 
 */
 
-// Vendor - files for third party code
-// Settings - preprocessors, fonts, variables (no style output)
-// Tools - mixins, functions (no style output)
-// Generic - resets or normalizing files
-// Elements - bare HTML elements
-// Components - specific UI components
+// Variables
+// Fonts
+$serif-font-stack: "Optima", "Palatino Linotype", serif;
+$sans-font-stack: Arial, Helvetica, sans-serif;
+// Colors
+$primary-blue: #1e489c;
+$lightest-blue: #dadcf7;
+$darkest-blue: #17387a;
+$off-white: #fffffe;
+
+// Components
 body {
     margin: 0;
 }
 
 h1, h2, h3, h4, h5, h6 {
-    color: #17387a;
-    font-family: Arial, Helvetica, sans-serif;
+    color: $darkest-blue;
+    font-family: $sans-font-stack
 }
 
 // header
 .header {
     height: 10em;
-    background-image: linear-gradient(to bottom, #1e489c, #dadcf7);
+    background-image: linear-gradient(to bottom, $primary-blue, $lightest-blue);
 }
 #logo {
     width: 20%;
@@ -43,10 +48,10 @@ h1, h2, h3, h4, h5, h6 {
     display: inline-block;
 }
 .react-link {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: $sans-font-stack;
     font-weight: bold;
     font-size: 18px;
-    color: white;
+    color: $off-white;
     text-decoration: none;
 }
 
@@ -54,51 +59,44 @@ h1, h2, h3, h4, h5, h6 {
 .app-page {
     padding: 4em;
     padding-right: 30%;
-    background-color: #dadcf7;
+    background-color: $lightest-blue;
     height: 50%;
-    font-family: "Optima", "Palatino Linotype", serif;
+    font-family: $serif-font-stack;
     font-size: 18px;
     line-height: 25px;
-}
-
-.runtime-msg {
-    font-size: 14px;
-    padding-top: 0.5em;
 }
 
 // footer
 #footer {
     height: 10%;
     bottom: 0;
-    background-image: linear-gradient(to top, #1e489c, #dadcf7);
+    background-image: linear-gradient(to top, $primary-blue, $lightest-blue);
 }
 
 // forms
 input {
     margin-top: 0.3em;
     padding: 0.3em;
-    border: 1px solid #1e489c;
+    border: 1px solid $primary-blue;
 }
 input[type=text] {
-    font-family: "Optima", "Palatino Linotype", serif;
+    font-family: $serif-font-stack;
     font-size: 16px;
 }
 input[type=text]:focus {
     outline: none !important;
-    border: 2px solid #1e489c;
+    border: 2px solid $primary-blue;
 }
 input[type=submit] {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: $sans-font-stack;
     font-size: 14px;
     font-weight: bold;
-    color: #17387a;
-    background-color: #fffffe !important;
+    color: $darkest-blue;
+    background-color: $off-white !important;
     border-radius: 8px;
 }
 input[type=submit]:hover, input[type=submit]:active, input[type=submit]:focus {
     cursor: pointer;
     outline: none !important;
-    border: 2px solid #1e489c;
+    border: 2px solid $primary-blue;
 }
-
-// Utilities/Helpers - utilities and helper classes with the most authority
