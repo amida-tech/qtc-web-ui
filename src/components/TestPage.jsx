@@ -9,7 +9,7 @@ import 'styles/qtcstyles.scss'
 */
 function TestPage() {
     return (
-        <div className='app-page' id='test-page-div'>
+        <div className='app-page'>
             <h2>Test a Mapping</h2>
             <p>
                 Please enter a valid DBQ number below, then choose the mapping file you want to test.

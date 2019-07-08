@@ -9,6 +9,7 @@ import CreatePage from './CreatePage';
 import DevelopPage from './DevelopPage';
 import TestPage from './TestPage';
 import NotFound from './NotFound';
+import callAPI from './HelperFunctions';
 
 /*
  * AppNavigator: Navigation menu that provides links to show the HTML 

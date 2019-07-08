@@ -5,7 +5,7 @@ import 'styles/qtcstyles.scss'
  * IndexPage: Welcome/home page.
 */
 const IndexPage = () => (
-    <div className='app-page' id='index-page-div'>
+    <div className='app-page'>
         <h2>Welcome!</h2>
         <p>
             You've reached the QTC Mapping-DBQs API.

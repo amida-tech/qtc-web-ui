@@ -12,7 +12,7 @@ const { apiURL } = config
 */
 function DevelopPage() {
     return (
-        <div className='app-page' id='develop-page-div'>
+        <div className='app-page'>
             <h2>Development Mode</h2>
             <p>
                 Please fill out the fields below to generate a mapping file.
