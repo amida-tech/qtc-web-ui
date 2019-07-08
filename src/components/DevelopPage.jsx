@@ -14,7 +14,9 @@ function DevelopPage() {
     return (
         <div className='app-page' id='develop-page-div'>
             <h2>Development Mode</h2>
-            Please fill out the fields below to generate a mapping file.
+            <p>
+                Please fill out the fields below to generate a mapping file.
+            </p>
         </div>
     )
 }

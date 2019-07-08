@@ -88,7 +88,9 @@ class CreatePage extends Component {
         return (
             <div className='app-page' id='create-page-div'>
                 <h2>Create a Mapping</h2>
-                Please enter a valid DBQ number below to generate its mapping file.
+                <p>
+                    Please enter a valid DBQ number below to generate its mapping file.
+                </p>
                 <form onSubmit={this.handleSubmit} autoComplete="off">
                     <br></br>
                     <div className="field">

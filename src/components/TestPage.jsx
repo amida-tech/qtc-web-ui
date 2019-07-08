@@ -11,7 +11,9 @@ function TestPage() {
     return (
         <div className='app-page' id='test-page-div'>
             <h2>Test a Mapping</h2>
-            Please enter a valid DBQ number below, then choose the mapping file you want to test.
+            <p>
+                Please enter a valid DBQ number below, then choose the mapping file you want to test.
+            </p>
         </div>
     )
 }
