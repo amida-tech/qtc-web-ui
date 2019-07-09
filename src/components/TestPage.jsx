@@ -1,5 +1,4 @@
-import React, { Component } from 'react'
-import 'styles/qtcstyles.scss'
+import React from 'react'
 
 /*
  * TestPage: React frontend for --test functionality.

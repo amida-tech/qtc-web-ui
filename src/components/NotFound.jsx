@@ -1,5 +1,4 @@
 import React from 'react'
-import 'styles/qtcstyles.scss'
 
 /*
  * NotFound: Error page for when a user tries to go to any unrecognized URL on the domain.

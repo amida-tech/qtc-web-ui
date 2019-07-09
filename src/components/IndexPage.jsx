@@ -1,5 +1,4 @@
 import React from 'react'
-import 'styles/qtcstyles.scss'
 
 /*
  * IndexPage: Welcome/home page.

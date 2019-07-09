@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import 'styles/qtcstyles.scss'
 import config from 'config/configFromCookie'
 import { callAPI, downloadFile } from './HelperFunctions';
 
@@ -22,7 +21,6 @@ class CreatePage extends Component {
         this.setState({ 
             dbqnum: '',
             isCreating: false,
-            isDownloading: false 
         });
     }
 
@@ -34,18 +32,19 @@ class CreatePage extends Component {
     handleSubmit = async () => {
         event.preventDefault();
         this.setState({ isCreating: true });
+        const { dbqnum } = this.state
 
         // catches blank input error
-        if (this.state.dbqnum == '') {
+        if (dbqnum == '') {
             this.resetForm();
             alert('Please enter a valid DBQ number.\n' + error);
             return;
         }
         try {
             // call API and download file
-            var requestURL = apiURL + 'mapping_data_frames/' + this.state.dbqnum;
-            const response = await callAPI(requestURL, 'GET', '');
-            downloadFile(requestURL, this.state.dbqnum);
+            const requestURL = apiURL + 'mapping_data_frames/' + dbqnum;
+            await callAPI(requestURL, 'GET', '');
+            downloadFile(requestURL, dbqnum);
 
             this.setState({ 
                 isCreating: false,
@@ -67,7 +66,7 @@ class CreatePage extends Component {
         if (isCreating) {
             downloadMsg = 'Creating mapping...';
         } else if (isDownloading) {
-            downloadMsg = 'Downloading file...';
+            downloadMsg = 'Your download should start shortly.';
         } else {
             downloadMsg = '';
         }
@@ -79,20 +78,17 @@ class CreatePage extends Component {
                     Please enter a valid DBQ number below to generate its mapping file.
                 </p>
                 <form onSubmit={this.handleSubmit} autoComplete="off">
-                    <br></br>
                     <div className="field">
                         <label className="label">DBQ Number:</label>
                         <div>
                             <input className="input" type="text" name="dbqnum" value={this.state.dbqnum} onChange={this.handleChange}/>
                         </div>
                     </div>
-                    <br></br>
                     <input type="submit" value="Download"/>
                     <div className="runtime-msg">
                         {downloadMsg}
                     </div>
                 </form>
-                <br></br>
             </div>
         );
     }

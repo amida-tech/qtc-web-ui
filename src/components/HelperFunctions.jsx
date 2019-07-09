@@ -1,8 +1,4 @@
-import React, { Component } from 'react'
-import 'styles/qtcstyles.scss'
-import config from 'config/configFromCookie'
-
-const { apiURL } = config
+/* Helper Functions for DBQ-Mapping App */
 
 /* callAPI: submits GET or POST request to API */
 export function callAPI(requestURL, method, data) {
@@ -25,7 +21,7 @@ export function downloadFile(requestURL, filename) {
     fileLink.href = requestURL;
     fileLink.setAttribute('download', filename);
     document.body.appendChild(fileLink);
-    
+
     // auto-click link to download file, then cleanup url
     fileLink.click();
     fileLink.parentNode.removeChild(fileLink);

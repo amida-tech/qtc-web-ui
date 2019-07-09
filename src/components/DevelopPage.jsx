@@ -1,5 +1,4 @@
-import React, { Component } from 'react'
-import 'styles/qtcstyles.scss'
+import React from 'react'
 import config from 'config/configFromCookie'
 
 const { apiURL } = config
