@@ -1,23 +1,20 @@
 import React from 'react'
-import config from 'config/configFromCookie'
-
-const { apiURL } = config
 
 /*
  * DevelopPage: React frontend for --dev functionality.
  *
- * 
- * 
+ *
+ *
 */
-function DevelopPage() {
-    return (
-        <div className='app-page'>
-            <h2>Development Mode</h2>
-            <p>
-                Please fill out the fields below to generate a mapping file.
-            </p>
-        </div>
-    )
+function DevelopPage () {
+  return (
+    <div className='app-page'>
+      <h2>Development Mode</h2>
+      <p>
+        Please fill out the fields below to generate a mapping file.
+      </p>
+    </div>
+  )
 }
 
-export default DevelopPage;
+export default DevelopPage

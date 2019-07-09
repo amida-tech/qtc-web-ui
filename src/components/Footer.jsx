@@ -5,7 +5,7 @@ import { hot } from 'react-hot-loader'
  * Footer: Gradient footer.
 */
 const Footer = () => (
-    <div className='footer'></div>
+  <div className='footer'></div>
 )
 
 // hot-reload page
