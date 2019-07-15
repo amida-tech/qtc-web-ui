@@ -1,0 +1,108 @@
+/* 
+ * QTCSTYLES.SCSS: stylesheet for DBQ-Mapping App. 
+*/
+
+// Variables
+// Fonts
+$serif-font-stack: "Optima", "Palatino Linotype", serif;
+$sans-font-stack: Arial, Helvetica, sans-serif;
+// Colors
+$primary-blue: #1e489c;
+$lightest-blue: #dadcf7;
+$darkest-blue: #17387a;
+$off-white: #fffffe;
+
+// Components
+body {
+    margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: $darkest-blue;
+    font-family: $sans-font-stack
+}
+
+// header
+.header {
+    height: 10em;
+    background-image: linear-gradient(to bottom, $primary-blue, $lightest-blue);
+}
+#logo {
+    width: 20%;
+    height: auto;
+    float: left;
+    padding: 3em;
+}
+// nav bar
+#nav-bar-div {
+    height: 100%;
+    margin-left: 40%;
+}
+#nav-bar-div ul {
+    list-style: none;
+    line-height: 9em;
+    text-align: center;
+}
+#nav-bar-div li {
+    padding: 0% 5%;
+    display: inline-block;
+}
+.react-link {
+    font-family: $sans-font-stack;
+    font-weight: bold;
+    font-size: 18px;
+    color: $off-white;
+    text-decoration: none;
+}
+
+// page contents
+.app-page {
+    padding: 4em;
+    padding-right: 30%;
+    background-color: $lightest-blue;
+    height: 50%;
+    font-family: $serif-font-stack;
+    font-size: 18px;
+    line-height: 25px;
+}
+
+// footer
+.footer {
+    height: 10%;
+    bottom: 0;
+    background-image: linear-gradient(to top, $primary-blue, $lightest-blue);
+}
+
+// forms
+.field {
+    margin: 1em 0em;
+}
+input {
+    padding: 0.3em;
+    border: 1px solid $primary-blue;
+}
+input[type=text] {
+    font-family: $serif-font-stack;
+    font-size: 16px;
+}
+input[type=text]:focus {
+    outline: none !important;
+    border: 2px solid $primary-blue;
+}
+input[type=submit] {
+    font-family: $sans-font-stack;
+    font-size: 14px;
+    font-weight: bold;
+    color: $darkest-blue;
+    background-color: $off-white !important;
+    border-radius: 8px;
+}
+input[type=submit]:hover, input[type=submit]:active, input[type=submit]:focus {
+    cursor: pointer;
+    outline: none !important;
+    border: 2px solid $primary-blue;
+}
+.runtime-msg {
+    margin: 1em 0em;
+    font-size: 14px;
+}
