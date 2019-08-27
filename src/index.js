@@ -1,7 +1,11 @@
 import React from 'react'
+import { BrowserRouter as Router } from 'react-router-dom'
 import ReactDOM from 'react-dom'
 
-// import config, { getConfigSuccessful } from 'config/configFromCookie'
-import AppNavigator from 'components/App'
+import App from 'components/App'
 
-ReactDOM.render(<AppNavigator />, document.getElementById('react_root'))
+ReactDOM.render((
+  <Router>
+    <App />
+  </Router>
+), document.getElementById('react_root'))

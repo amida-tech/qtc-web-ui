@@ -14,7 +14,7 @@ const { NODE_ENV } = process.env
 const deploymentLevelSpecificConfig = {
   entry: {
     production: {
-      'public/index': path.join(__dirname, 'src', 'index.js'),
+      'public/index': path.join(__dirname, 'src', 'index.js')
     },
     development: {
       'public/index': [
@@ -113,12 +113,13 @@ module.exports = removeEmpty({
       { from: 'src/config/serverConfig.js', to: 'config/serverConfig.js' },
       { from: 'src/config/bundleConfig.js', to: 'config/bundleConfig.js' },
       { from: 'src/config/winston.js', to: 'config/winston.js' },
-      { from: 'src/assets', to: 'public/assets', ignore: '.DS_Store' },
+      { from: 'src/assets', to: 'public/assets', ignore: '.DS_Store' }
     ]),
     new HtmlWebpackPlugin({
       template: 'src/index.template.ejs',
       chunks: ['public/index'],
-      filename: 'public/index.html'
-    }),
+      filename: 'public/index.html',
+      favicon: 'src/assets/amida-fav.png'
+    })
   ].concat(deploymentLevelSpecificConfig.plugins[NODE_ENV]))
 })
