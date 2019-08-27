@@ -41,7 +41,6 @@ class TestPage extends Component {
       body: data,
     }).then(res => res.text()).then(text => this.setState({ results: text}))
     this.setState({ isTesting: true })
-    this.resetForm()
   }
   render() {
     let downloadMsg
@@ -68,13 +67,12 @@ class TestPage extends Component {
                         <input ref={(ref) => { this.uploadInput = ref; }} type="file" />
                     </div>
                 </div>
-                <br></br>
                 <input type="submit" value="Begin Test"/>
                 <div className="runtime-msg">
                   {downloadMsg}
                 </div>
                 <textarea cols="70" rows="15" value={this.state.results}/>
-                {this.setState({ isTesting: false })}
+                <input type="button" name="cancelCourse" value="Reset" onClick={this.resetTest} />
             </form>
         </div>
     );
