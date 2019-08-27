@@ -82,7 +82,7 @@ if (NODE_ENV === 'development' || NODE_ENV === 'production') {
 // This handles case (3) and prepares case (1)(a) for handling later in the middleware stack.
 app.use(async (req, res, next) => {
   if (req.path.match(hasNoDot)) {
-    // Yes, we always want to rewrite /any/path/that/does/not/have/a/dot/in/the/name to 
+    // Yes, we always want to rewrite /any/path/that/does/not/have/a/dot/in/the/name to
     // public/index.html
     // This is because we don't want the server to know what is a valid path or not--we only want
     // to have to code valid routes into react-router in /public/index.bundle.js
@@ -101,7 +101,7 @@ else if (NODE_ENV === 'production') {
   app.use('/public', staticMiddleware)
 }
 
-// The request will only reach this point in the middleware sequence if it wasn't 
+// The request will only reach this point in the middleware sequence if it wasn't
 // /any/path/that/does/not/have/a/dot/in/the/name and it wasn't a static asset that exists.
 // This handles case (1)(b). Note that this is only intended to handle 404/not-found cases.
 // The path is redirected to public/index.html because, if the user enters
