@@ -20,14 +20,10 @@ class TestPage extends Component {
     };
 
     this.handleUpload = this.handleUpload.bind(this);
+    this.baseState = this.state
   }
-  resetTest = () => {
-    this.setState({
-      dbqnum: '',
-      uploadInput: '',
-      results: '',
-      isTesting: false,
-    })
+  resetForm = () => {
+    this.setState(this.baseState)
   }
 
   handleUpload(ev) {
@@ -53,7 +49,7 @@ class TestPage extends Component {
     return (
         <div className='app-page' id='test-page-div'>
             <h2>Testing a Mapping</h2>
-            Please enter a DBQ number corresponding to the mapping file you would like to test.
+            <p> Please enter a DBQ number corresponding to the mapping file you would like to test. </p>
             <form onSubmit={this.handleUpload}>
                 <br></br>
                 <div className="field">
@@ -72,7 +68,7 @@ class TestPage extends Component {
                   {downloadMsg}
                 </div>
                 <textarea cols="70" rows="15" value={this.state.results}/>
-                <input type="button" name="cancelCourse" value="Reset" onClick={this.resetTest} />
+                <button onClick={this.resetForm} type="button">Reset</button>
             </form>
         </div>
     );
