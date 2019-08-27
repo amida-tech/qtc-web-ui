@@ -117,4 +117,4 @@ class DevelopPage extends Component {
     }
 }
 
-export default DevelopPage
+export default DevelopPage;
