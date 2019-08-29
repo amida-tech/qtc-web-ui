@@ -14,7 +14,7 @@ class TestPage extends Component {
 
     this.state = {
       dbqnum: '',
-      uploadInput: '',
+      uploadInput: null,
       results: '',
       isTesting: false,
     };
@@ -23,6 +23,7 @@ class TestPage extends Component {
     this.baseState = this.state
   }
   resetForm = () => {
+    this.myFormRef.reset();
     this.setState(this.baseState)
   }
 
@@ -50,7 +51,7 @@ class TestPage extends Component {
         <div className='app-page' id='test-page-div'>
             <h2>Testing a Mapping</h2>
             <p> Please enter a DBQ number corresponding to the mapping file you would like to test. </p>
-            <form onSubmit={this.handleUpload}>
+            <form ref={(el) => this.myFormRef = el} onSubmit={this.handleUpload} onReset={this.resetForm}>
                 <br></br>
                 <div className="field">
                     <label className="label">DBQ Number:</label>
