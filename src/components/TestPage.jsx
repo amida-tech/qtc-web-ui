@@ -29,15 +29,14 @@ class TestPage extends Component {
 
   handleUpload(ev) {
     ev.preventDefault();
-
+    this.setState({ isTesting: true })
     const data = new FormData();
     data.append('file', this.uploadInput.files[0]);
     data.append('dbqnum', this.dbqnum.value);
     fetch(apiURL+'test_dbq', {
       method: 'POST',
       body: data,
-    }).then(res => res.text()).then(text => this.setState({ results: text}))
-    this.setState({ isTesting: true })
+    }).then(res => res.text()).then(text => this.setState({ results: text, isTesting: false}))
   }
   render() {
     let downloadMsg
@@ -68,9 +67,9 @@ class TestPage extends Component {
                 <div className="runtime-msg">
                   {downloadMsg}
                 </div>
-                <textarea cols="70" rows="15" value={this.state.results}/>
-                <button onClick={this.resetForm} type="button">Reset</button>
+                <textarea cols="70" rows="15" value={this.state.results} readOnly/>
             </form>
+            <button onClick={this.resetForm} type="button">Reset</button>
         </div>
     );
   }
