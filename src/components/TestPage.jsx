@@ -36,7 +36,13 @@ class TestPage extends Component {
     fetch(apiURL+'test_dbq', {
       method: 'POST',
       body: data,
-    }).then(res => res.text()).then(text => this.setState({ results: text, isTesting: false}))
+    }).then(res => res.text())
+      .then(text => this.setState({ results: text, isTesting: false}), (error) => { 
+        if (error){
+          alert('Please enter a valid DBQ number and upload a valid file.\n' + error)
+          this.setState({ isTesting: false })
+        }
+      })
   }
   render() {
     let downloadMsg
@@ -51,13 +57,11 @@ class TestPage extends Component {
             <h2>Testing a Mapping</h2>
             <p> Please enter a DBQ number corresponding to the mapping file you would like to test. </p>
             <form ref={(el) => this.myFormRef = el} onSubmit={this.handleUpload} onReset={this.resetForm}>
-                <br></br>
                 <div className="field">
                     <label className="label">DBQ Number:</label>
                     <div className="control">
                         <input ref={(ref) => { this.dbqnum = ref; }} type="text"/>
                     </div>
-                    <br></br>
                     <label className="label">Upload Mapping File:</label>
                     <div className="control">
                         <input ref={(ref) => { this.uploadInput = ref; }} type="file" />
