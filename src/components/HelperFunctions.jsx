@@ -13,7 +13,11 @@ export function callAPI(requestURL, method, data) {
     } else if (method == 'POST') {
         return fetch(requestURL, {
             method: method,
-            body: data
+            body: "100&100",
+            mode: 'cors'
+            // headers: {
+            //     'Content-Type': 'application/json'
+            // }
         });
     }
 }

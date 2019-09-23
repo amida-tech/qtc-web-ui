@@ -38,7 +38,7 @@ class DevelopPage extends Component {
     handleSubmit = async () => {
         event.preventDefault();
         this.setState({ isCreating: true });
-
+        this.state.dbqnum = '8045'
         // catches blank input error
         if (this.state.dbqnum == '') {
             this.resetForm();
@@ -79,40 +79,38 @@ class DevelopPage extends Component {
         }
 
         return (
-            <div className='app-page'>
-                <h2>Development Mode</h2>
-                <p>
-                    Please fill out the fields below to generate a mapping file.<br></br>
-                    Blank threshold fields will be set to 80 by default.
-                </p>
-                <form onSubmit={this.handleSubmit} autoComplete="off">
-                    <br></br>
-                    <div className="field">
-                        <label className="label">DBQ Number:</label>
-                        <div>
-                            <input className="input" type="text" name="dbqnum" value={this.state.dbqnum} onChange={this.handleChange}/>
-                        </div>
-                    </div>
-                    <div className="field">
-                        <label className="label">Matching Threshold (0-100):</label>
-                        <div>
-                            <input className="input" type="number" name="matchThresh" min="0" max="100" value={this.state.matchThresh} onChange={this.handleChange}/>
-                        </div>
-                    </div>
-                    <div className="field">
-                        <label className="label">Scraping Threshold (0-100):</label>
-                        <div>
-                            <input className="input" type="number" name="scrapeThresh" min="0" max="100" value={this.state.scrapeThresh} onChange={this.handleChange}/>
-                        </div>
-                    </div>
-                    <br></br>
-                    <input type="submit" value="Download"/>
-                    <div className="runtime-msg">
-                        {downloadMsg}
-                    </div>
-                </form>
-                <br></br>
-            </div>
+            <input type="button" value="Download" onClick={this.handleSubmit}/>
+            // <div className='app-page'>
+            //     <h2>Development Mode</h2>
+            //     <p>
+            //         Please fill out the fields below to generate a mapping file.<br></br>
+            //         Blank threshold fields will be set to 80 by default.
+            //     </p>
+            //     <form autoComplete="off">
+            //         <div className="field">
+            //             <label className="label">DBQ Number:</label>
+            //             <div>
+            //                 <input className="input" type="text" name="dbqnum" value={this.state.dbqnum} onChange={this.handleChange}/>
+            //             </div>
+            //         </div>
+            //         <div className="field">
+            //             <label className="label">Matching Threshold (0-100):</label>
+            //             <div>
+            //                 <input className="input" type="number" name="matchThresh" min="0" max="100" value={this.state.matchThresh} onChange={this.handleChange}/>
+            //             </div>
+            //         </div>
+            //         <div className="field">
+            //             <label className="label">Scraping Threshold (0-100):</label>
+            //             <div>
+            //                 <input className="input" type="number" name="scrapeThresh" min="0" max="100" value={this.state.scrapeThresh} onChange={this.handleChange}/>
+            //             </div>
+            //         </div>
+            //         <div className="runtime-msg">
+            //             {downloadMsg}
+            //         </div>
+            //     </form>
+            //     <input type="button" value="Download" onClick={this.handleSubmit}/>
+            // </div>
         );
     }
 }
